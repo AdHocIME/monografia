@@ -1,0 +1,35 @@
+\chapter{Codificação}
+\section{BCH}
+
+\paragraph{}O BCH é uma codificação do tipo cíclica, que tem por particularidade poder corrigir um certo número de erros em qualquer posição do código. BCH são as iniciais de Bose-Chaudhuri-Hocquenghem que corresponde aos sobrenomes dos inventores dessa codificação.
+
+\paragraph{} Os códigos BCH são utilizados em diversas aplicações, tais como: comunicações por satélite, leitores de CDs , de DVDs e de códigos QR.
+
+\paragraph{}O código BCH pode ser construído da seguinte maneira: Seja $m_i(x)$ um polinômio mínimo binário com coeficientes em GF(q) e $a^i$ é um elemento do GF(q), onde 'a' e 'i' são inteiros e 'q' é um número primo. Então existe um polinômio gerador formado segundo a equação \ref{eq1}:
+
+\begin{equation}
+\label{eq1}
+G(x) = MMC(m_1(x),…, m_{(d - 1)}(x))
+\end{equation}
+
+\paragraph{} Onde d + 1 é igual ao q elevado ao comprimento do código. 
+
+\paragraph{} Então, como todo código cíclico, a palavra código será $x^r.M(x) + R(x)$. Onde M(x) é a mensagem, r o grau do polinômio gerador e R(x) o resto da divisão de $x^r$.M(x) por G(x).
+
+\paragraph{} A decodificação começa a partir do cálculo do vetor síndrome, que é a soma da palavra código com um vetor de erro desconhecido, se o vetor síndrome tiver algum valor diferente de zero, então haverá erros na palavra código. Através do algoritmo de Berlekamp-Massey \citep{berlekamp}, podemos achar o polinômio de localização do erro. Então, a partir desse polinômio é possível corrigir os erros da palavra código, já que suas raízes são as localizações dos erros. Por fim a mensagem é reconstruída pela divisão do código corrigido pelo polinômio gerador.
+
+\section{Reed-Solomon}
+\paragraph{} A codificação Reed-Solomon é um grupo de códigos de correção de erro. Um dos integrantes desse grupo é o próprio BCH, porém essa nova codificação é baseada na correção de símbolos. 
+
+\paragraph{}Essa codificação além das tecnologias citadas no BCH, ela é utilizada em transmissões de dados como o DSL e o WiMAX.
+
+\paragraph{} Para encontrar o polinômio gerador do Reed-Solomon é preciso saber primeiro o comprimento do bloco mensagem+paridade. Sendo n o número de símbolos desse bloco, então m será igual a raiz quadrada de n+1 e esse número representa o tamanho de G(x). Então o polinômio gerador será formado pela equação (eq2):
+
+\begin{equation}
+\label{eq2}    
+G(x) = (x + a^0)(x + a^1)...(x + a^{m-1})
+\end{equation}
+
+\paragraph{} Onde a é um elemento primitivo de GF($q^m$).
+
+\paragraph{} A partir do cálculo do polinômio gerador o processo será análogo ao algoritmo do BCH, sendo que, a única diferença é no cálculo do polinômio localizador de erro e do polinômio de magnitude dos erros. Estes são encontrados pelo MDC de dois polinômios: Um é do resto da divisão de $x^m$ pelo vetor síndrome e o outro é pelo resto da divisão do polinômio encontrado na equação anterior, novamente pelo vetor síndrome. 

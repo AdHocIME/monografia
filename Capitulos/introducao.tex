@@ -1,0 +1,46 @@
+\chapter{Introdução}
+\noindent
+
+\paragraph{} Olhando pelo prisma das operações militares do futuro, é impossível não citar as Aeronaves Remotamente Pilotadas (ARP), bem como o desenvolvimento de drones e VANTs (Veículo Aéreo Não Tripulado) que estão cada vez mais no foco das potências militares ao redor do mundo, além das grandes empresas do setor aeronáutico e de defesa, como a sueca SAAB, a israelense Rafael e a italiana Leonardo. Vale ressaltar que o ex-piloto Jonas Jakobsson, hoje funcionário da SAAB, também destacou \citep{FAB2016} que a aviação do futuro aponta para os sistemas automatizados e a inteligência artificial.
+
+\paragraph{} Por outro lado, há uma crescente procura pela interconexão de dispositivos que visam priorizar a concepção de Internet das Coisas. Essa procura, se deve, principalmente, ao aumento dos dispositivos conectáveis a internet. Previsões indicam que mais de 40 bilhões de terminais estarão conectados até 2020 \citep{Forbes2014}. Para se alcançar esse objetivo é imprescindível a evolução de redes independentes de pontos de acesso.
+
+\paragraph{} Nesse contexto, a implementação de uma rede Ad Hoc em sistemas embarcados em VANTs e drones se tornou uma grande ambição na indústria de defesa. 
+
+\section{Motivação}
+\paragraph{} Com o crescimento do uso de VANTs e \textit{drones} para as mais diversas atividades, surgiu a necessidade da comunicação entre eles. Atentando para a realização de tarefas cooperativas por múltiplos VANTs, verificou-se um problema acadêmico em aberto. Assim como, o problema de redes Ad Hoc que, com grande aplicabilidade, mobilidade e escalabilidade, são ideias para uso com redes de VANTs. Por conseguinte, os grupos de robótica e redes do Instituto Militar de Engenharia vêm unindo esforços para gerar contribuições significativas, nessa área de pesquisa.
+
+\paragraph{} Assim sendo, o produto final deste projeto, é fornecer uma base para a realização da comunicação entre VANTs em uma rede Ad Hoc.
+
+
+\section{Objetivo}
+\paragraph{} O objetivo deste projeto é voltado para a montagem de uma rede Ad Hoc com microcontroladores que se comunicam através de um rádio RF. Para o êxito deste objetivo, é necessário que essa rede seja capaz de incorporar, ou excluir dispositivos, sempre que se aproximarem ou se afastarem da rede.  
+
+\section{Justificativa}
+\paragraph{} Devido ao grande peso tecnológico embutido neste projeto, sua contribuição vai além da implementação de uma rede Ad Hoc em dispositivos embarcados. Este projeto foi desenvolvido sobre orientação do Grupo de Redes do Instituto Militar de Engenharia, um grupo de pesquisa que, em muito, contribui para a qualidade do desenvolvimento tecnológico do país. Outro fator que justifica todo o esforço despendido é a contribuição deste projeto para a força armada brasileira, já que o resultado final esta voltado para a aplicação militar.
+
+
+\section{Metodologia}
+\paragraph{} Primeiramente, foi realizada uma introdução teórica acerca das redes ad hoc, protocolo IEEE 802.15.4, protocolo RNDIS e a propagação de ondas no modelo de 2 raios, além de se apresentar o rádio nRF24L01+ e o microcontrolador STM32F411.
+
+\paragraph{} Em seguida, foi descrita a implementação dos programas em linguagem C para a configuração e troca de pacotes do microcontrolador, bem como, a modulação e a simulação do canal, que foram feitas, respectivamente, nos \textit{softwares} \textit{LabView} e \textit{MatLab}. Após esses experimentos, os resultados foram analisados e discutidos.
+
+\paragraph{} E, por fim, apresentamos uma conclusão sobre o projeto, incluindo projeções e lições aprendidas, que podem ser aplicadas e ampliadas em trabalhos futuros.
+    
+    
+\section{Estrutura do Texto}
+\paragraph{} O capítulo 2 explica o que é uma rede ad-hoc, abordando seu uso em tecnologias atuais, evidenciando suas vantagens e desvantagens. 
+
+\paragraph{} O capítulo 3 descreve o padrão IEEE 802.15.4, suas camadas, funções e serviços oferecidos. Nesse capítulo foi descrito, de maneira sucinta, o formato de seus pacotes a formação de redes segundo esse protocolo.
+
+\paragraph{} O capítulo 4 aborda o protocolo RNDIS e o seu uso no projeto, além de explicar o funcionamento do USB.
+
+\paragraph{} O capítulo 5 apresenta o modelo de propagação utilizado para a transmissão dos pacotes de um dispositivo para o outro. Nessa parte também é descrita uma abordagem sobre os parâmetros necessários para uma antena adequada para o projeto final, até que se chegou a conclusão sobre o tipo de antena que deverá ser usada. 
+
+\paragraph{} O capítulo 6 apresenta os códigos FEC presentes no projeto. Nele se relata suas aplicações e introdução teórica de cada código apresentado.  
+
+\paragraph{} O capítulo 7 e 8 falam sobre os rádios nRF24L01+ e NI USRP-2901. Suas funções e aplicações são explicadas de forma objetiva e na implementação descreve seus usos no projeto final.
+
+\paragraph{} O capítulo 9 expõe a implementação do projeto, sua montagem e programas utilizados para o estabelecimento da rede. O capítulo 10 mostra os testes realizados, bem como seus resultados e discussões.
+
+\paragraph{} No capítulo 11 são apresentadas as conclusões finais acerca do projeto.

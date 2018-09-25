@@ -1,0 +1,51 @@
+\chapter{RNDIS}
+\noindent
+
+\paragraph{} A Especificação da Interface de \textit{Driver} de Rede Remota (RNDIS) é um protocolo da \textit{Microsoft} que atua principalmente sobre o USB, e fornece um link \textit{Ethernet} virtual para os sistemas operacionais \citep{RNDIS}.
+
+\section{USB}
+
+\paragraph{} 
+Nesta seção iremos ver alguns conceitos do protocolo USB que serão necessários para posterior entendimento do sistema desenvolvido, que foram aplicados na implementação do código desenvolvido no projeto. Como base para implementação foi utilizado as bibliotecas padrão do fabricante do microcontrolador e uma biblioteca utilizada pela IMBEL, que é restrita para uso comercial. E para a depuração foi utilizado o software USBLyzer e uma documentação de assistência a implementações práticas, descrita por uma fabricante de dispositivos IOT. 
+
+USB (\textit{Universal Serial Bus}) é uma interface para conexão de dispositivos, mais conhecida de todos os tempos, foi desenvolvida em 1996 e popularizada nos anos 2000. No decorrer do tempo a USB passou por três significativas revisões, estando atualmente na versão 3.0, que suporta transmissão de vídeo com resolução \textit{full} HD em tempo real.
+
+\subsection{\textit{Endpoint}}
+
+\paragraph{}Um sistema USB é formado por um \textit{host} e múltiplos periféricos conectados através de um único canal. O \textit{host} atribui um endereço de 7 bits a cada periférico, de forma que um host pode estar ligado a até 127 dispositivos.
+
+\paragraph{}A transmissão de dados pelo protocolo se faz através de \textit{buffers} endereçáveis, conhecidos como \textit{endpoints}, sendo que cada dispositivo possui múltiplos \textit{endpoints}, que são unidirecionais, tendo convencionada a direção de \textit{host} para periférico como OUT, e de periférico para \textit{host} como IN.
+
+\paragraph{}Além de endereço e direção, cada \textit{endpoint} está relacionado a um tipo de transmissão. As transmissões de controle são usadas para pacotes de configuração, requisição e comando. As transmissões de \textit{interrupt} garantem a latência mínima para recepção dos pacotes.
+
+\paragraph{}As transmissões do tipo \textit{bulk} são usadas para transmissão de pacotes grandes de dados, até 1500 bytes por pacote, sem garantia de velocidade e latência. Transmissões do tipo \textit{isochronous} são usadas para \textit{streaming} de vídeo e áudio em tempo real com largura de banda reservada, e sem checagem de erro.
+
+\subsection{Descritores}
+
+\paragraph{}Quando um periférico é conectado a um \textit{host}, aquele envia informações sobre suas funções para este; configurações do dispositivo, e configurações de cada \textit{endpoint}. Os dispositivos USB são ainda divididos em classes e subclasses pré-determinadas pelo USB fórum, para controlar a evolução e a padronização do protocolo.
+
+\paragraph{}Um dispositivo de mouse USB, por exemplo, pertence a classe \textit{Humam Interface Device} (HID), e possui três \textit{endpoints}: Os \textit{endpoints} IN e OUT de controle e um \textit{endpoint interrupt} IN para envio de eventos relacionados ao usuário, como um clique de botão ou movimento do dispositivo.
+
+\subsection{Interface e configuração}
+
+\paragraph{}O protocolo USB especifica ainda que cada dispositivo pode ter múltiplas configurações e múltiplas interfaces, permitindo que o \textit{host} escolha a maneira como irá utilizar o dispositivo (através da escolha da configuração), e quais recursos do dispositivo irá utilizar (através da escolha das interfaces).
+
+\subsection{Transações de controle}
+
+Transações de controle são sempre iniciadas pelo \textit{host} com um pacote de 8 bytes de \textit{setup}, que identifica o tipo de pacote a direção e a função do mesmo. Em seguida os pacotes de dados e por fim um pacote de status indicando o estado do dispositivo ou do \textit{host} dependendo do tipo de transação.
+
+No caso do protocolo do protocolo RNDIS é através do pacote de \textit{setup} que o \textit{host} configura o dispositivo e obtém as especificações do mesmo, como endereço físico do díspositivo, banda disponível, etc. O dispositivo e \textit{host} somente estão aptos a transmitir pacotes de dados com \textit{frames ethernet} após a fase de configurações. 
+
+\subsection{Transações de \textit{interrupt}}
+
+Essas transações determinam um tempo mínimo para serem notificadas, são ideias para notificar a ocorrência de eventos, e costumam ser utilizadas por dispositivos que trabalham sobre eventos como o mouse e o teclado, ou seja, dispositivos de interface humana.
+
+No protocolo RNDIS é utilizado um \textit{endpoint} do tipo \textit{interrupt} para notificar o \textit{host} sobre mensagens a serem lidas no \textit{endpoint} de controle. É utilizado dessa forma para contornar a limitação do \textit{endpoint} de controle que aceita somente transações iniciadas pelo \textit{host}, tornando o canal de configuração em um canal \textit{full duplex}.
+
+\subsection{Transações de \textit{bulk}}
+
+São usadas para transmitir grandes blocos de dados, possuem mecanismo automático de verificação de erro e mecanismo de retransmissão. Esses mecanismos possuem maior latência, mas garantem a entrega dos dados, por isso são muito usados para transmissão de grandes blocos de dados, que podem ser fragmentados, sem que se precise implementar algorítmos de retransmissão.
+
+No caso do RNDIS são usados para transmitir \textit{frames ethernet}, os \textit{frames} são fragmentados, em pacotes de 64 bytes e transmitidos pelo \textit{endpoint}. Se o tamanho do \textit{frame} for múltiplo de 64 bytes é enviado um pacote adicional, de forma que um pacote menor do que 64 bytes indique o fim de um \textit{frame ethernet}.
+
+%Os pacotes USB são divididos em Token, data, handshake, special. Transações em %endpoints de controle são sempre iniciadas pelo host por um pacote de 

@@ -1,0 +1,215 @@
+%
+% ARQUIVO: pre-texto.tex
+%
+% VERSÃO: 1.0
+% DATA: Maio de 2016
+% AUTOR: Coordenação de Trabalhos Especiais SE/8
+% 
+%  Arquivo tex para a criação da parte pré-textual do documento de Projeto de Fim de Curso.
+%
+%%
+
+
+% -----
+% PÁGINA DE CAPA DO DOCUMENTO DE PFC
+% -----
+\makecapa
+
+% -----
+% PÁGINA DE TÍTULO DO PFC
+% -----
+\prepareadvisors
+\maketitle
+
+% -----
+% PÁGINA DE CRÉDITOS DO DOCUMENTO DE PFC
+% -----
+\makecredits
+
+% -----
+% PÁGINA DE FOLHA DE ASSINATURAS
+% -----
+\preparemembers
+\approvalpage
+
+% -----
+% PÁGINA DE DEDICATÓRIA (OPCIONAL, ie. pode remover toda a página)
+% -----
+%%% DEDICATÓRIA - PREENCHER...
+\dedicatoria{% 
+"That's all folks."
+}%
+\makededication
+
+% -----
+% PÁGINA DE AGRADECIMENTOS (OPCIONAL, ie. pode remover toda a página)
+% -----
+%%% AGRADECIMENTOS - PREENCHER...
+\agradecimentos{%
+Agradecemos primeiramente a Deus por nos permitir mais essa conquista. \\
+\indent
+Agradecemos também aos familiares e amigos que incentivaram e apoiaram nas horas mais difíceis.\\
+\indent
+Somos gratos também aos nossos orientadores que se dedicaram para que chegássemos até aqui.\\
+\indent
+Agradecemos também ao Maj. Renault e a Indústria de Material Bélico (IMBEL) e ao pelo conhecimento prático e equipamento cedido para uso no trabalho.\\
+\indent
+Por fim, agradecemos ao Instituto Militar de Engenharia, que nos forneceu o tão sonhado diploma de engenharia.
+}%
+\makethanks
+
+% -----
+% PÁGINA DE EPÍGRAFE (OPCIONAL, ie. pode remover toda a página)
+% -----
+%%% EPÍGRAFE - PREENCHER...
+\epigrafe{%
+Para que todos vejam, e saibam, e considerem, e juntamente entendam que a mão do Senhor fez isto, ...
+}%
+\autorepigrafe{%    %% Se não tem autor, coloque "Anônimo"
+Isaías 41:20
+}%
+\makeepigraph
+
+% -----
+% PÁGINA DE SUMÁRIO
+% -----
+\tableofcontents
+
+% -----
+% PÁGINAS DE LISTAS DE FIGURAS E DE TABELAS
+% se a Dissertação não possui figuras e/ou tabelas, REMOVA O COMANDO CORRESPONDENTE
+% -----
+\listoffigures
+\listoftables
+
+% -----
+% PÁGINA DE LISTA DE SIGLAS
+% se a Dissertação não possui siglas, REMOVA TODA A PÁGINA
+% -----
+%%% SIGLAS - PREENCHER...
+\acronimo{6LoWPAN}{IPv6 in Low-Power Wireless Personal Area Networks Groups}
+\acronimo{ANSI}{American National Standards Institute}
+\acronimo{AR}{ACK request}
+\acronimo{ARP}{Aeronaves Remotamente Pilotadas}
+\acronimo{BCH}{Bose-Chaudhuri-Hocquenghem}
+\acronimo{BT}{Bandwidth-symbol Time}
+\acronimo{CAP}{Contention access period}
+\acronimo{CFP}{Contention Free Period}
+\acronimo{CRC}{Cyclic Redundancy Check}
+\acronimo{CSMA/CA}{Carrier sense multiple access with colision avoidence}
+\acronimo{CTS}{Clear to send}
+\acronimo{DARPA}{Defense Advanced Research Projects Agency}
+\acronimo{ED}{End device}
+\acronimo{EIRP}{Effective Isotropic Radiated Power}
+\acronimo{FEC}{Foward Error Correction}
+\acronimo{FM}{Frquency Modulation}
+\acronimo{FSK}{Frequency Shift Keying}
+\acronimo{GF}{Galois Field}
+\acronimo{GFSK}{Gaussian Frequency Shift Keying}
+\acronimo{GPS}{Global Positioning System}
+\acronimo{GTS}{Guaranteed Time Slot}
+\acronimo{HD}{High Definition}
+\acronimo{HID}{Humam Interface Device}
+\acronimo{HTTP}{Hypertext Transfer Protocol}
+\acronimo{HTML}{Hypertext Markup Language}
+\acronimo{IE}{Information Element}
+\acronimo{IEEE}{Institute of Electrical and Electronics Engineers}
+\acronimo{IETF}{Internet Engineering Task Force}
+\acronimo{IFS}{InterFrame Space}
+\acronimo{IID}{Interface Identifier}
+\acronimo{IMBEL}{Industria de Material Bélico}
+\acronimo{IoT}{Internet of Things}
+\acronimo{ITU}{International Telecommunications Union}
+\acronimo{ISM}{Industrial Sientific and Medical}
+\acronimo{LED}{Light Emissor Diode}
+\acronimo{LR-WPAN}{Low-rate Wireless Personal Area Network}
+\acronimo{LwIP}{Low Wheight IP}
+\acronimo{MAC}{Medium Access Control}
+\acronimo{MANET}{Mobile Ad Hoc NETwork}
+\acronimo{MCPS}{MAC Commom Part Sublayer}
+\acronimo{MFR}{MAC Footer}
+\acronimo{MHR}{MAC Header}
+\acronimo{MLE}{MAC Link Establishment}
+\acronimo{MLME}{MAC sublayer Management Entity}
+\acronimo{MLE}{Mesh Link Establishment}
+\acronimo{MMC}{Menor Múltiplo Comum}
+\acronimo{OSI}{Open System Interconnection}
+\acronimo{PAN}{Personal Area Network}
+\acronimo{PC}{Personal Computer}
+\acronimo{PHR}{PHY Header}
+\acronimo{PID}{Packet identification}
+\acronimo{PRNET}{Packet Radio NETwork}
+\acronimo{PSDU}{PHY Service Data Unit}
+\acronimo{RDS}{Radio Definido por Software}
+\acronimo{RF}{Radio Frequency}
+\acronimo{RLOC}{Localizador de Roteamento}
+\acronimo{RNDIS}{Remote Network Driver Interface Specification}
+\acronimo{RSSI}{Received Signal Strength Indicator}
+\acronimo{RTS}{Ready to send}
+\acronimo{SO}{Sistema Operacional}
+\acronimo{SoC}{System on a Chip}
+\acronimo{SPI}{Serial Peripheral Interface}
+\acronimo{TDMA}{Time Division Multiple Access}
+\acronimo{UHF}{Ultra High Frequency}
+\acronimo{USB}{Universal Serial Bus}
+\acronimo{USRP}{Universal Software Radio Peripheral}
+\acronimo{VANT}{Veículo Aéreo Não-Tripulado}
+\acronimo{WAN}{Wireless Personal Area Network}
+\acronimo{WPAN}{Wireless Personal Area Network}
+
+\listofnicks
+
+% -----
+% PÁGINA DE LISTA DE ABREVIATURAS
+% se a Dissertação não possui abreviaturas ou símbolos, REMOVA TODA A PÁGINA
+% -----
+%%% ABREVIATURAS - PREENCHER...
+\abreviatura{ACK}{Acknowledgment}
+\abreviatura{ID}{Identifier}
+\abreviatura{PHY}{Camada física}
+
+
+%%% SÍMBOLOS - PREENCHER...
+\simbolo{$\Phi$}{Fase do Campo Elétrico}
+\simbolo{$\Gamma$}{Coeficiente de Reflexão}
+\simbolo{$\alpha$}{fator de sub-relaxação}
+\simbolo{$\phi$}{variável dependente da equação diferencial geral}
+\simbolo{$\beta$}{Constante de Fase}
+\simbolo{$\Delta$}{Variação}
+\simbolo{$\epsilon$}{Permissividade}
+\simbolo{$\sigma$}{Condutividade do Solo}
+\simbolo{$\omega$}{Velocidade Angular}
+\simbolo{$\lambda$}{Comprimento de onda}
+\simbolo{$\rho_s$}{Coeficiente de Espalhamento do Solo}
+\simbolo{$\eta$}{Impedância Característica do Meio}
+\simbolo{$\pi$}{variável dependente da equação diferencial geral}
+\simbolo{$\theta$}{Ângulo}
+
+
+\listofsymbols
+
+% -----
+% PÁGINA DE RESUMO
+% -----
+%%% RESUMO - PREENCHER...
+\resumo{%
+No contexto dos grupos de pesquisa de robótica e redes do IME, este projeto propõe a construção de um protótipo de um modem RF ethernet micro-controlado para formação de redes mesh, com aplicação em redes de múltiplos VANTs, atendendo aos requisitos de energia, alcance e capacidade de transmissão determinados pela necessidade de enlace dos VANTs. O trabalho abrange especificação do protocolo de interface do microcontrolador com o sistema VANT, escolha de protocolo para formação da rede mesh, subcamada MAC, especificação da camada física, interface do usuário para configuração dos parâmetros de rede, escolha de modem compatível com as especificações e escolha de antena baseado em simulações.
+\indent
+\paragraph{} No que se refere as antenas que serão utilizadas pelos VANTs que constituirão a rede AD-HOC, será feita a simulação no MatLab de um dimensionamento de enlace utilizando o Modelo de 2 Raios, afim de encontrar a melhor disposição das antenas, de tal forma que permita a comunicação sem perda de pacotes, o que acontecerá estando a potência recebida sempre acima da sensibilidade do receptor. Foram analisados ainda os efeitos do meio na potência recebida, pela antena receptora como atenuação do espaço livre, rugosidade do solo e coeficiente de reflexão, bem como a função de radiação direcional das antenas.\\
+}%
+\makeresumo
+
+% -----
+% PÁGINA DE ABSTRACT
+% -----
+%%% ABSTRACT - PREENCHER...
+\abstract{%
+In context with the research groups of robotics and network of IME (Military Institute of Engineering), this project proposes the construction of a prototype of a microcontrolled RF Ethernet modem to build mesh networks, applicable to multiple VANTs network, meeting the requirements in energy, reach and transmission capacity stated by the necessity of links on the VANTs.
+\indent
+\paragraph{}This work includes: specification of the interface protocol of the microcontroller with the VANT system; choosing the protocol to create the mesh network; MAC sublayer; specification of the physical layer; choosing a modem compatible with the specifications; and choosing a antenna based on simulations.
+\indent
+\paragraph{}In reference to the antennas used by the VANTs, which will build an AD-HOC network, a simulation of the sizing of a link will be made in MatLab, using the Two-Ray ground-reflection model, in order to find the best arrangement of antennas, allowing the communication without the loss of packeges, which will happen if the received power is always greater than the sensibility of the receptor.
+\indent
+\paragraph{}The receiver antenna also analyzed the effects of the middle of the received power, as a mitigation of the free space, the soil roughness and the reflection coefficient, as well as the directional radiation function of the antennas.
+}%
+\makeabstract

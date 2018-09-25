@@ -1,0 +1,14 @@
+\chapter{Conclusão}
+\paragraph{} Não foi possível até a data de entrega deste relatório à banca examinadora, realizar testes com o sistema completo. Porém em testes preliminares e simulações foi possível averiguar os parâmetros para o funcionamento do sistema. 
+
+\paragraph{} Quanto a sua interface o sistema proposto foi validado em sistema operacional Windows 10, Linux Ubuntu 16.04 e Raspbian. Em todos os sistemas a placa foi detectada com sucesso e o \textit{driver} do sistema instalou um interface de rede ligada ao dispositivo.
+
+\paragraph{} Quanto a transmissão de pacotes em canal RF com antena de polarização vertical omnidirecional com 2,5 dBi de ganho, o sistema foi testado para um alcance de 1km em ambiente urbano.
+
+\paragraph{} Dessa forma podemos concluir que para causo de uso proposto como demanda do projeto, (até 15 VANTs com computador de bordo Linux em voo com altura variável de 40 a 60 metros espalhados em uma área de até 500 metros da base) o sistema desenvolvido atende, até então, ao que foi solicitado com prejuízo da conexão dos modems em rede descentralizada objetivo que está em estágio avançado de implementação.
+
+\paragraph{} Ao longo do desenvolvimento do projeto foram encontrados diverso desafios que acabaram por atrasar o cronograma do projeto. Entre esses desafios podemos citar a implementação da classe USB no microcontrolador utilizado no projeto, que se tornou uma etapa de difícil depuração devido a conflitos de segurança de baixo nível do SO utilizado na depuração, também podemos citar a decodificação do sinal em RDS, que torna necessária a demodulação exata do sinal e reversão de todas as etapas de codificação de forma a obter o pacote \textit{ethernet} original.
+
+\paragraph{}Quanto a escolha das antenas a serem utilizadas, depois do dimensionamento do enlace, utilizando o Modelo de 2 Raios como modelo teórico, chegamos a conclusão que a situação ideal para o sistema exige um cenário no qual os VANTs devem estar voando à uma mesma altura, para que a potência recebida na antena receptora será a maior possível, em comparação a outros cenários em que os VANTs voam em alturas distintas. 
+
+\paragraph{}Considerando, assim que as antenas estejam a uma mesma altura do solo, chegou-se a conclusão de que as antenas deveriam estar voando a menor altura possível, $h_t = h_r = 20m$, de forma a otimizar o desempenho do enlace, apresentando, assim, uma distância máxima de funcionamento sem perda de informação de $d \approx 910m$. 
